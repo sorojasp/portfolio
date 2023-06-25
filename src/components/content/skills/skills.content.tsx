@@ -24,8 +24,11 @@ export const SkillsComponent = ()=>{
 
           <ThemeProvider theme={theme}>
 
-            <p>Javascript</p> 
-            <ProgressBar completed={60} animateOnRender={true} />
+            <p>Genius</p> 
+            <ProgressBar completed={200} 
+                         animateOnRender={true}
+                         width='80'
+                          />
 
           </ThemeProvider>
         </div>
