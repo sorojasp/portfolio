@@ -1,0 +1,14 @@
+.navigation-bar{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+
+
+NavLink{
+    padding:2px;
+}
+

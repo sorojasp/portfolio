@@ -7,9 +7,19 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
-import HotelIcon from '@mui/icons-material/Hotel';
-import RepeatIcon from '@mui/icons-material/Repeat';
+
 import Typography from '@mui/material/Typography';
+import { createTheme, ThemeProvider } from '@mui/material';
+
+
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Varela Round',
+      'cursive',
+    ].join(','),
+  },});
+
 
 
 const WorkExperienceComponent =()=>{
@@ -17,7 +27,11 @@ const WorkExperienceComponent =()=>{
     return(
         <>
         <h1>WorkExperienceComponent</h1>
-        <Timeline position="alternate">
+        <ThemeProvider theme={theme}>
+        <Timeline position="alternate"
+          sx={{
+            fontFamily: 'Varela Round',
+          }}>
             <TimelineItem>
                 <TimelineOppositeContent
                 sx={{ m: 'auto 0' }}
@@ -65,6 +79,7 @@ const WorkExperienceComponent =()=>{
             </TimelineItem>
    
     </Timeline>
+    </ThemeProvider>
         </>
     )
 }
