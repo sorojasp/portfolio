@@ -14,22 +14,26 @@ function App() {
 
   return (
     <>
-      <Grid container spacing={0.5}>
-
-        <Grid item xs={1} md={0}>
+      <Grid container spacing={0.3}>
+        <Grid item xs={0.5} md={0.5}>
           
-        </Grid>
+        </Grid> 
 
-        <Grid item xs={2} md={2}>
+        
+        <Grid item xs={1} md={2}>
           <AsideMenuComponent/>
         </Grid>
 
-        <Grid item xs={8} md={7}>
+        <Grid item xs={9} md={7}>
           <ContentComponent/>
-        </Grid>   
-
-        <Grid item xs={1} md={0}>
         </Grid> 
+
+        <Grid item xs={0.5} md={0.5}>
+          
+        </Grid> 
+        
+          
+
        
       </Grid>
     </>

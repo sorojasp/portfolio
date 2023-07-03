@@ -7,23 +7,29 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 //to put the varela round
 import { createTheme, ThemeProvider } from '@mui/material';
 
 //icon
-import DirectionsBikeRoundedIcon from '@mui/icons-material/DirectionsBikeRounded';
+import InsertEmoticonRoundedIcon from '@mui/icons-material/InsertEmoticonRounded';
 
 
 // to aling the timeline
 import  { timelineItemClasses } from '@mui/lab/TimelineItem'; 
 
-// SR7 image
-import SR7picture from '../../assets/images/picture_SR_4.jpg'
-import './asideMenu.component.css'
+
 
 // itemData interface
 import {ItemDataInterface} from '../../shared/interfaces/itemData/item-data.Interface';
+
+// SR7 image
+import SR7picture from '../../assets/images/picture_SR_4.jpg'
+//STYLES
+import './asideMenu.component.css'
+
+import Icon from '@mui/material/Icon';
 
 
 
@@ -51,7 +57,7 @@ const personalData:ItemDataInterface[]=[
     },
     {
         nameValue:"Email",
-        value:"sorojasp@udistrital.edu.co",
+        value:"stivenorlandorojaspulido@gmail.com",
         colorIcon:"primary",
         emoji:'📧'
 
@@ -77,11 +83,11 @@ export const AsideMenuComponent = ()=>{
 
 
         <div style={{padding:'5px'}}>
-        <p><strong>👨🏻‍💻Stiven Rojas</strong></p>
+        <p><strong>Stiven Rojas</strong></p>
         <p>Fullstack developer</p>
         </div>
 
-        <img  src={SR7picture} width={312} alt="stiven"/>
+        <img  src={SR7picture} width={227} alt="stiven"/>
         {
 
         
@@ -93,36 +99,51 @@ export const AsideMenuComponent = ()=>{
 
 
         <ThemeProvider theme={theme}>
+
+
+        <div style={{paddingLeft:'5px', display:'flex'}}>
+                        <Box sx={{backgroundColor:'#9c27b0', 
+                                width:'35px',
+                                height:'35px',
+                                display:'flex',
+                                justifyContent:'center',
+                                alignItems:'center',
+                                borderRadius:'20px',
+                                }}>
+                            <InsertEmoticonRoundedIcon sx={{color:'white'}} />
+                        </Box>
+                    </div>
+
+            
             <Timeline  sx={{
                         [`& .${timelineItemClasses.root}:before`]: {
                         flex: 0,
                         padding: 0,
+                        margin: 0
                         },
-                        }}>
+                        paddingRight: '5px',
+                        margin: 0
+                        }}
+                        
+                        >
 
-                <TimelineItem>
-                        <TimelineSeparator  >
-                        <TimelineConnector/>
-                        <TimelineDot color="secondary" >
-                            <DirectionsBikeRoundedIcon />
-                        </TimelineDot>
-                        <TimelineConnector />
-                        </TimelineSeparator>
-                    </TimelineItem>
+
+
+                    
+
+                
 
                 {
                     personalData.map((item:ItemDataInterface)=>
                     
-                    <TimelineItem>
-                        <TimelineSeparator>
+                    <TimelineItem   >
+                        <TimelineSeparator   >
                         <TimelineDot color={item.colorIcon}/>
                         <TimelineConnector />
                         </TimelineSeparator>
                         <TimelineContent>
-                            
                             <strong>
-                                
-                                {item.nameValue}: 
+                                {item.nameValue}:
                             </strong> 
                             <br></br>
                             {item.value}
